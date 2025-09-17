@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --accent: #3498db;
+      --light: #f5f5f5;
+      --dark: #222;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: var(--light);
+      color: var(--primary);
+    }
+    header {
+      background: var(--dark);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 { margin-bottom: 0.5rem; }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover { color: var(--accent); }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    .project {
+      background: white;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .project img, .project video {
+      max-width: 100%;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill {
+      background: var(--accent);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    footer {
+      text-align: center;
+      background: var(--dark);
+      color: white;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Roderick Harris</h1>
+    <p>Self-taught Programmer • Software Developer • Problem Solver</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- About Me -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hi, I’m Roderick! I’m a self-taught software developer with experience in 
+      C, C++, Python, Java, JavaScript, HTML/CSS, Kotlin, and PHP. I’m an inventor of algorithms for composing, arranging, and performing music. I have authored a series of instructional books for playing the piano for church, as well as classical piano.  
+      I love building applications — from Music Composition/Arranging Suite,  MIDI music analysis tools to interactive web apps.
+    </p>
+    <p>
+      My focus is on making software that is creative, practical, and accessible. 
+      I’m always learning new technologies (currently exploring React, Next.js, and cybersecurity) 
+      and looking for opportunities to contribute to innovative teams.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>🎹 MIDI Analysis App</h3>
+      <p>A tool for analyzing MIDI files and visualizing counterpoint in real time.</p>
+      <img src="images/midi-app.png" alt="Screenshot of MIDI app" />
+      <video controls>
+        <source src="videos/midi-demo.mp4" type="video/mp4" />
+      </video>
+      <p><a href="https://github.com/<your-username>/<repo-name>" target="_blank">View Code</a></p>
+    </div>
+
+    <div class="project">
+      <h3>🎵 Theme Composer</h3>
+      <p>React + TypeScript app for composing themes with random generators and presets.</p>
+      <img src="images/theme-composer.png" alt="Screenshot of Theme Composer" />
+      <p><a href="https://github.com/<your-username>/<repo-name>" target="_blank">View Code</a></p>
+    </div>
+
+    <!-- Add more projects here -->
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <span class="skill">C / C++</span>
+      <span class="skill">Python</span>
+      <span class="skill">Java</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">HTML & CSS</span>
+      <span class="skill">React</span>
+      <span class="skill">PHP</span>
+      <span class="skill">Kotlin</span>
+      <span class="skill">Cybersecurity Basics</span>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>If you’d like to connect, feel free to reach out:</p>
+    <p>
+      📧 Email: <a href="mailto:your.email@example.com">your.email@example.com</a><br />
+      💼 LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a><br />
+      🐙 GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Roderick Harris. Built with ❤️ and GitHub Pages.</p>
+  </footer>
+
+</body>
+</html>
