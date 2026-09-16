@@ -1,0 +1,8 @@
+.brand-icon {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 7px rgba(35, 215, 232, .35));
+}
+.site-header .brand-icon { width: 30px; height: 30px; }
