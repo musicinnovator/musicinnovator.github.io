@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" data-theme="midnight">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workspace — ETAPKI</title><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="styles.css">
+</head>
+<body><div class="site-shell">
+<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/logo-mark.svg" alt=""><span>ETAPKI</span></a><nav class="nav-links" aria-label="Primary navigation"><a href="index.html">Overview</a><a href="workspace.html" aria-current="page">Workspace</a><a href="transformations.html">Transformations</a><a href="analysis.html">Analysis</a><a href="timeline.html">Timeline</a><a href="documentation.html">Docs</a><button class="theme-toggle" data-theme-toggle type="button">Parchment</button></nav></div></header>
+<main class="container">
+  <section class="page-header"><div class="breadcrumb"><a href="index.html">Overview</a> / Workspace</div><div class="eyebrow">Interactive presentation prototype</div><h1>One source. Visible decisions.</h1><p>This browser prototype demonstrates the proposed information architecture. It is intentionally clear about what is conceptual: the C++ application remains the source of truth for analysis, formulas, preview, revisions, and export.</p></section>
+  <div class="notice"><span aria-hidden="true">ⓘ</span><span><strong>Prototype boundary.</strong> The controls below demonstrate the proposed visual feedback. They do not upload files or change a MIDI file in the website.</span></div>
+  <section class="section">
+    <div class="workspace">
+      <aside class="workspace-panel"><div class="panel-title"><strong>Workflow</strong><span>icon rail</span></div><div class="rail">
+        <button class="tool-button active" type="button"><span class="tool-icon">⌁</span><span class="tool-label">Source</span></button>
+        <button class="tool-button" type="button"><span class="tool-icon">▥</span><span class="tool-label">Analysis</span></button>
+        <button class="tool-button" type="button"><span class="tool-icon">▤</span><span class="tool-label">Timeline</span></button>
+        <button class="tool-button" type="button"><span class="tool-icon">▱</span><span class="tool-label">Revision</span></button>
+        <button class="tool-button" type="button"><span class="tool-icon">↺</span><span class="tool-label">Preview</span></button>
+        <button class="tool-button" type="button"><span class="tool-icon">↗</span><span class="tool-label">Export</span></button>
+      </div><div class="panel-title"><strong>Locations</strong><span>select</span></div><div class="label-list">
+        <button class="list-item active">RN — Repeated Notes</button><button class="list-item">U2R — Up a 2nd / return</button><button class="list-item">I8 — Intervals of 8th</button><button class="list-item">LP — Just Before a Leap</button><button class="list-item">RLN — Relatively Long Note</button><button class="list-item">I3 — Intervals of 3rd</button><button class="list-item">SPU — Serial Pattern Up</button><button class="list-item">LAD — Leaps</button><button class="list-item">DN — Dotted Notes</button><button class="list-item">NLN — Next to Last Note</button>
+      </div></aside>
+
+      <section class="workspace-panel timeline"><div class="timeline-toolbar"><div class="panel-title" style="flex:1;margin:0"><strong>ETAPKI 2D timeline</strong><span>RN · target 04</span></div><div class="tools"><button class="button small" data-preview="before" type="button">Before</button><button class="button small primary" data-preview="after" type="button">After</button></div></div><div class="timeline-grid" data-timeline><div class="piano" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="target-marker" style="left:54%"></div><div class="playhead" style="left:39%"></div></div><div class="timeline-legend"><span><i class="legend-dot source"></i>source ghost</span><span><i class="legend-dot"></i>finding/target</span><span><i class="legend-dot revision"></i>current revision</span><span>loop region · playback cursor · zoom</span></div></section>
+
+      <aside class="workspace-panel"><div class="panel-title"><strong>Compatible families</strong><span>after analysis</span></div><div class="family-grid" style="grid-template-columns:repeat(2,1fr)">
+        <button class="family-card" data-family-button="appoggiatura" type="button"><span class="family-icon">♪</span><strong>Appoggiatura</strong></button>
+        <button class="family-card" data-family-button="compound" type="button"><span class="family-icon">♫</span><strong>Compound</strong></button>
+        <button class="family-card" data-family-button="mordent" type="button"><span class="family-icon">≈</span><strong>Mordent</strong></button>
+        <button class="family-card" data-family-button="slide" type="button"><span class="family-icon">╱</span><strong>Slide</strong></button>
+        <button class="family-card" data-family-button="snap" type="button"><span class="family-icon">⌜</span><strong>Snap</strong></button>
+        <button class="family-card" data-family-button="trill" type="button"><span class="family-icon">∿</span><strong>Trill</strong></button>
+        <button class="family-card" data-family-button="turn" type="button"><span class="family-icon">S</span><strong>Turn</strong></button>
+      </div><div class="card" style="margin-top:14px;padding:14px"><strong data-family-name>Appoggiatura</strong><p data-family-description>A grace-note approach resolving into the principal note.</p><div class="actions"><button class="button small primary" data-preview="after" type="button">Preview revision</button></div><p class="hero-note" data-workspace-status>Choose a family to inspect its compatible revision.</p></div></aside>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="container footer-row"><span>Interactive prototype · no files leave this page</span><a href="documentation.html">Read the integrity workflow →</a></div></footer>
+</div><script src="app.js"></script></body></html>
+

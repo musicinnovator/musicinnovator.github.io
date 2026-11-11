@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" role="img" aria-label="ETAPKI emblem">
+  <circle cx="36" cy="36" r="33" fill="#1b2833" stroke="#d49a62" stroke-width="2"/>
+  <path d="M10 39c11-21 21-21 31-3s16 14 21-10" fill="none" stroke="#d49a62" stroke-width="5" stroke-linecap="round"/>
+  <path d="M11 27c10-13 20-12 30 2s15 12 20-4" fill="none" stroke="#f3eee5" stroke-width="3" stroke-linecap="round"/>
+  <path d="M28 51h5V31h-5zm11 0h5V36h-5z" fill="#f3eee5"/>
+</svg>
+
