@@ -96,7 +96,34 @@ function wirePage() {
       if (status) status.textContent = "Selected note target. In the desktop app this action also selects the corresponding MIDI event and can audition it.";
     });
   });
+  document.querySelectorAll("[data-photo]").forEach((button) => {
+    button.addEventListener("click", () => openPhoto(button.dataset.photo, button.dataset.photoCaption || "ETAPKI current implementation"));
+  });
+  const lightboxClose = document.querySelector("[data-photo-close]");
+  if (lightboxClose) lightboxClose.addEventListener("click", closePhoto);
+  const lightbox = document.querySelector("[data-photo-lightbox]");
+  if (lightbox) lightbox.addEventListener("click", (event) => { if (event.target === lightbox) closePhoto(); });
+  document.addEventListener("keydown", (event) => { if (event.key === "Escape") closePhoto(); });
   createNotes(document.querySelector("[data-timeline]"));
+}
+
+function openPhoto(src, caption) {
+  const lightbox = document.querySelector("[data-photo-lightbox]");
+  const image = document.querySelector("[data-photo-lightbox-image]");
+  const label = document.querySelector("[data-photo-lightbox-caption]");
+  if (!lightbox || !image) return;
+  image.src = src;
+  image.alt = caption;
+  if (label) label.textContent = caption;
+  lightbox.classList.remove("hidden");
+  lightbox.setAttribute("aria-hidden", "false");
+}
+
+function closePhoto() {
+  const lightbox = document.querySelector("[data-photo-lightbox]");
+  if (!lightbox) return;
+  lightbox.classList.add("hidden");
+  lightbox.setAttribute("aria-hidden", "true");
 }
 
 let demoTimer = null;
