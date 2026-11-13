@@ -82,7 +82,7 @@ function wirePage() {
     button.addEventListener("click", () => {
       document.querySelectorAll("[data-demo-mode]").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
       const status = document.querySelector("[data-demo-status]");
-      if (status) status.textContent = `${button.dataset.demoMode === "notation" ? "Notation" : "Piano-roll"} view selected. The desktop application keeps this view synchronized with the same note model.`;
+      if (status) status.textContent = `${button.dataset.demoMode === "notation" ? "Notation" : "Piano-roll"} view selected. The same phrase remains in focus.`;
     });
   });
   document.querySelectorAll("[data-demo-scrub]").forEach((slider) => {
@@ -93,11 +93,24 @@ function wirePage() {
       document.querySelectorAll(".demo-note").forEach((item) => item.classList.remove("selected"));
       note.classList.add("selected");
       const status = document.querySelector("[data-demo-status]");
-      if (status) status.textContent = "Selected note target. In the desktop app this action also selects the corresponding MIDI event and can audition it.";
+      if (status) status.textContent = "Selected note target. The matching event is ready to audition.";
     });
   });
   document.querySelectorAll("[data-photo]").forEach((button) => {
     button.addEventListener("click", () => openPhoto(button.dataset.photo, button.dataset.photoCaption || "ETAPKI current implementation"));
+  });
+  document.querySelectorAll("[data-shape-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const card = button.closest("[data-shape-card]");
+      if (!card) return;
+      document.querySelectorAll("[data-shape-card]").forEach((item) => {
+        if (item !== card) item.classList.remove("is-playing", "is-selected");
+      });
+      card.classList.toggle("is-playing");
+      card.classList.add("is-selected");
+      button.setAttribute("aria-pressed", String(card.classList.contains("is-playing")));
+      button.textContent = card.classList.contains("is-playing") ? "Pause motion" : "View motion";
+    });
   });
   const lightboxClose = document.querySelector("[data-photo-close]");
   if (lightboxClose) lightboxClose.addEventListener("click", closePhoto);
