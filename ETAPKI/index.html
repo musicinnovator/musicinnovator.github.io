@@ -33,7 +33,12 @@
         <div class="hero-kicker"><span class="tag">MIDI analysis</span><span class="tag">notation-aware editing</span><span class="tag">before / after audition</span><span class="tag">validated export</span></div>
         <p class="hero-note">A presentation site for the ETAPKI C++ application. No account, advertising, subscription, or cloud upload is required.</p>
       </div>
-      <figure class="hero-panel"><img src="assets/uiux-concept-board.jpg" alt="Three ETAPKI workspace material directions with an icon toolbar and musical timeline" loading="lazy"><figcaption class="caption">Score Desk, Satin Slate, and Glass &amp; Copper — one workflow, three presentation treatments.</figcaption></figure>
+      <figure class="hero-panel current-ui-hero" aria-label="Current ETAPKI QtScore workspace preview">
+        <div class="current-window-bar"><span class="window-dot"></span><strong>ETAPKI · QtScore workspace</strong><span class="window-state">source → current → target</span></div>
+        <div class="current-toolbar"><span>⌕</span><span>⚙</span><span>▥</span><span>▶</span><span>■</span><span>↶</span><span>↷</span><span>♩</span></div>
+        <div class="current-ui-grid"><div class="current-side"><b>SOURCE / ANALYSIS</b><span class="current-active">RN · Repeated Notes</span><span>U2R · Up 2nd and Return</span><span>FN · Final Note</span><span>LAD · Leaps</span><span>QN · Quick Notes</span></div><div class="current-roll"><b>2D TIMELINE · CURRENT</b><div class="roll-grid"><i class="roll-note n-a"></i><i class="roll-note n-b"></i><i class="roll-note n-c"></i><i class="roll-playhead"></i></div><small>source ghost · current revision · target marker</small></div><div class="current-side"><b>EMBELLISHMENT &amp; VARIANTS</b><span class="current-active">Appoggiatura · RPNB</span><span>Compound appoggiatura</span><span>Trill · D3</span><span>Turn · T4</span><small>Preview · Apply · Export MIDI + TXT</small></div></div>
+        <figcaption class="caption">Current QtScore direction: real workspace concepts, current controls, and non-destructive source/current/target comparison.</figcaption>
+      </figure>
     </section>
 
     <section class="section"><div class="container">
@@ -51,8 +56,8 @@
     </div></section>
 
     <section class="section"><div class="container">
-      <div class="section-heading"><div><div class="eyebrow">See the proposed interaction</div><h2>From splash to postview.</h2></div><p>The visual concept clip shows the intended progression from application identity through icon-first workflow and seven transformation lanes.</p></div>
-      <div class="compare"><div class="compare-panel"><img class="concept-preview" src="assets/concept-preview.jpg" alt="ETAPKI UIUX concept preview" loading="lazy"></div><div class="compare-arrow" aria-hidden="true">→</div><div class="compare-panel"><img src="assets/seven-transformation-lanes.jpg" alt="Seven musical transformation lanes showing source and embellished patterns" loading="lazy"></div></div>
+      <div class="section-heading"><div><div class="eyebrow">Current implementation surface</div><h2>From source to postview.</h2></div><p>The public site now documents the current QtScore workflow instead of showing obsolete mockup boards: import, analyze, choose, audition, revise, and export.</p></div>
+      <div class="compare current-compare"><div class="compare-panel"><h3>Source · unchanged</h3><div class="current-mini-roll source-state"><span></span><span></span><span></span><span></span></div><p>Read-only source model with analyzer targets and original timing preserved.</p></div><div class="compare-arrow" aria-hidden="true">→</div><div class="compare-panel"><h3>Current · auditionable revision</h3><div class="current-mini-roll revision-state"><span></span><span></span><span></span><span></span><span></span><span></span></div><p>Selected variant, moving playhead, reversible revision, and integrity-gated export.</p></div></div>
     </div></section>
 
     <section class="section"><div class="container">
