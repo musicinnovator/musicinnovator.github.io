@@ -18,7 +18,7 @@
       <a href="transformations.html">Transformations</a>
       <a href="analysis.html">Analysis</a>
       <a href="timeline.html">Timeline</a>
-      <a href="documentation.html">Docs</a>
+      <a href="documentation.html">Docs</a><a href="history.html">Bach &amp; context</a>
       <button class="theme-toggle" data-theme-toggle type="button">Parchment</button>
     </nav>
   </div></header>
@@ -30,6 +30,7 @@
         <h1>Make musical detail visible.</h1>
         <p class="lede">ETAPKI analyzes a MIDI source, identifies meaningful locations, and lets you audition traceable embellishment revisions without touching the original file.</p>
         <div class="actions"><a class="button primary" href="workspace.html">Explore workspace <span aria-hidden="true">→</span></a><a class="button" href="transformations.html">See seven families</a></div>
+        <div class="hero-kicker"><span class="tag">MIDI analysis</span><span class="tag">notation-aware editing</span><span class="tag">before / after audition</span><span class="tag">validated export</span></div>
         <p class="hero-note">A presentation site for the ETAPKI C++ application. No account, advertising, subscription, or cloud upload is required.</p>
       </div>
       <figure class="hero-panel"><img src="assets/uiux-concept-board.jpg" alt="Three ETAPKI workspace material directions with an icon toolbar and musical timeline" loading="lazy"><figcaption class="caption">Score Desk, Satin Slate, and Glass &amp; Copper — one workflow, three presentation treatments.</figcaption></figure>
@@ -53,9 +54,31 @@
       <div class="section-heading"><div><div class="eyebrow">See the proposed interaction</div><h2>From splash to postview.</h2></div><p>The visual concept clip shows the intended progression from application identity through icon-first workflow and seven transformation lanes.</p></div>
       <div class="compare"><div class="compare-panel"><img class="concept-preview" src="assets/concept-preview.jpg" alt="ETAPKI UIUX concept preview" loading="lazy"></div><div class="compare-arrow" aria-hidden="true">→</div><div class="compare-panel"><img src="assets/seven-transformation-lanes.jpg" alt="Seven musical transformation lanes showing source and embellished patterns" loading="lazy"></div></div>
     </div></section>
+
+    <section class="section"><div class="container">
+      <div class="section-heading"><div><div class="eyebrow">Current desktop direction</div><h2>One workspace, several ways to listen.</h2></div><p>ETAPKI brings the same non-destructive document model into analysis, piano-roll editing, notation, and playback views.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-icon">⇥</span><strong>Import and inspect</strong><p>Open a user-supplied MIDI file, keep the source locked, choose analysis locations, and jump from findings to the timeline.</p></article>
+        <article class="feature-card"><span class="feature-icon">▶</span><strong>Audition in context</strong><p>Play source, current revision, or a target region with a moving playhead, scrub control, loop range, tempo, and safe stop.</p></article>
+        <article class="feature-card"><span class="feature-icon">✎</span><strong>Edit notes</strong><p>Select, pencil, erase, transpose, move, resize, copy, cut, paste, edit velocity, and undo each completed gesture.</p></article>
+        <article class="feature-card"><span class="feature-icon">♬</span><strong>Read and revise</strong><p>Switch between piano-roll, 3D companion, and notation views while preserving selection, playhead, draft, and active variant.</p></article>
+      </div>
+    </div></section>
+
+    <section class="section"><div class="container">
+      <div class="section-heading"><div><div class="eyebrow">Seven families · one model</div><h2>Every change stays explainable.</h2></div><p>The application records the location, family, exact variant, parameters, seed when randomized, and integrity result for each revision.</p></div>
+      <div class="notation-strip"><div class="notation-panel" aria-label="Source notation example"></div><div class="notation-arrow" aria-hidden="true">→</div><div class="notation-panel revision" aria-label="Embellished notation example"></div></div>
+      <div class="transport"><button class="button small primary" data-demo-play type="button" aria-pressed="false">Play demo</button><button class="button small" data-demo-stop type="button">Stop</button><input class="scrub" data-demo-scrub type="range" min="0" max="100" value="0" aria-label="Demo playhead"><span class="transport-readout" data-demo-readout>0%</span></div>
+      <p class="source-note" data-demo-status>Presentation-only visual demo. The native C++ application performs real MIDI parsing, editing, rendering, and export.</p>
+    </div></section>
+
+    <section class="section"><div class="container">
+      <div class="notice"><span aria-hidden="true">✦</span><span><strong>Historical foundation.</strong> ETAPKI is named for <em>Essay on the True Art of Playing Keyboard Instruments</em>, C. P. E. Bach's two-part treatise. See the <a href="history.html">Bach and embellishment page</a> for the dates, the German chapter title <em>Von den Manieren</em>, and a concise source-based context.</span></div>
+    </div></section>
   </main>
   <footer class="footer"><div class="container footer-row"><span>ETAPKI · a C. P. E. Bach-inspired study instrument</span><span><a href="https://github.com/Harris-Software-Solutions-LLC/ETAPKI">Source repository</a> · UIUX branch</span></div></footer>
 </div>
 <script src="app.js"></script>
 </body>
 </html>
+
