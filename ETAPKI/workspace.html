@@ -5,10 +5,16 @@
   <title>Workspace — ETAPKI</title><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="styles.css">
 </head>
 <body><div class="site-shell">
-<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/logo-mark.svg" alt=""><span>ETAPKI</span></a><nav class="nav-links" aria-label="Primary navigation"><a href="index.html">Overview</a><a href="workspace.html" aria-current="page">Workspace</a><a href="transformations.html">Transformations</a><a href="analysis.html">Analysis</a><a href="timeline.html">Timeline</a><a href="documentation.html">Docs</a><button class="theme-toggle" data-theme-toggle type="button">Parchment</button></nav></div></header>
+<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/logo-mark.svg" alt=""><span>ETAPKI</span></a><nav class="nav-links" aria-label="Primary navigation"><a href="index.html">Overview</a><a href="workspace.html" aria-current="page">Workspace</a><a href="transformations.html">Transformations</a><a href="analysis.html">Analysis</a><a href="timeline.html">Timeline</a><a href="documentation.html">Docs</a><a href="history.html">Bach &amp; context</a><button class="theme-toggle" data-theme-toggle type="button">Parchment</button></nav></div></header>
 <main class="container">
   <section class="page-header"><div class="breadcrumb"><a href="index.html">Overview</a> / Workspace</div><div class="eyebrow">Interactive presentation prototype</div><h1>One source. Visible decisions.</h1><p>This browser prototype demonstrates the proposed information architecture. It is intentionally clear about what is conceptual: the C++ application remains the source of truth for analysis, formulas, preview, revisions, and export.</p></section>
   <div class="notice"><span aria-hidden="true">ⓘ</span><span><strong>Prototype boundary.</strong> The controls below demonstrate the proposed visual feedback. They do not upload files or change a MIDI file in the website.</span></div>
+  <section class="section" style="padding-bottom:18px"><div class="feature-grid">
+    <article class="feature-card"><span class="feature-icon">▶</span><strong>Playback surface</strong><p>Source, current revision, target audition, loop, scrub, tempo, and safe stop are native desktop controls.</p></article>
+    <article class="feature-card"><span class="feature-icon">♮</span><strong>Notation view</strong><p>Score and piano-roll views share the same notes, playhead, selection, and revision colors.</p></article>
+    <article class="feature-card"><span class="feature-icon">↶</span><strong>Editing history</strong><p>Completed edits, overdubs, and variant applications form one undoable non-destructive history.</p></article>
+    <article class="feature-card"><span class="feature-icon">⇧</span><strong>Export gate</strong><p>Format 0/1 output is written only after parse, model validation, serialization, re-open, and structural checks.</p></article>
+  </div></section>
   <section class="section">
     <div class="workspace">
       <aside class="workspace-panel"><div class="panel-title"><strong>Workflow</strong><span>icon rail</span></div><div class="rail">
