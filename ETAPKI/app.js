@@ -17,7 +17,7 @@ function setTheme(theme) {
 
 function nextTheme() {
   const current = document.documentElement.dataset.theme || "midnight";
-  setTheme(current === "midnight" ? "parchment" : current === "parchment" ? "gloss" : "midnight");
+  setTheme(current === "midnight" ? "parchment" : current === "parchment" ? "gloss" : current === "gloss" ? "satin" : "midnight");
 }
 
 function createNotes(container, mode = "source") {
@@ -72,7 +72,67 @@ function wirePage() {
       button.setAttribute("aria-expanded", String(!target.classList.contains("hidden")));
     });
   });
+  document.querySelectorAll("[data-demo-play]").forEach((button) => {
+    button.addEventListener("click", () => toggleDemoPlayback(button));
+  });
+  document.querySelectorAll("[data-demo-stop]").forEach((button) => {
+    button.addEventListener("click", () => stopDemoPlayback());
+  });
+  document.querySelectorAll("[data-demo-mode]").forEach((button) => {
+    button.addEventListener("click", () => {
+      document.querySelectorAll("[data-demo-mode]").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+      const status = document.querySelector("[data-demo-status]");
+      if (status) status.textContent = `${button.dataset.demoMode === "notation" ? "Notation" : "Piano-roll"} view selected. The desktop application keeps this view synchronized with the same note model.`;
+    });
+  });
+  document.querySelectorAll("[data-demo-scrub]").forEach((slider) => {
+    slider.addEventListener("input", () => setDemoProgress(Number(slider.value)));
+  });
+  document.querySelectorAll(".demo-note").forEach((note) => {
+    note.addEventListener("click", () => {
+      document.querySelectorAll(".demo-note").forEach((item) => item.classList.remove("selected"));
+      note.classList.add("selected");
+      const status = document.querySelector("[data-demo-status]");
+      if (status) status.textContent = "Selected note target. In the desktop app this action also selects the corresponding MIDI event and can audition it.";
+    });
+  });
   createNotes(document.querySelector("[data-timeline]"));
+}
+
+let demoTimer = null;
+let demoProgress = 0;
+
+function setDemoProgress(value) {
+  demoProgress = Math.max(0, Math.min(100, value));
+  document.querySelectorAll("[data-demo-scrub]").forEach((slider) => { slider.value = String(demoProgress); });
+  document.querySelectorAll(".demo-playhead").forEach((playhead) => { playhead.style.left = `${demoProgress}%`; });
+  document.querySelectorAll("[data-demo-readout]").forEach((readout) => { readout.textContent = `${Math.round(demoProgress)}%`; });
+}
+
+function toggleDemoPlayback(button) {
+  if (demoTimer) {
+    clearInterval(demoTimer);
+    demoTimer = null;
+    button.textContent = "Play demo";
+    button.setAttribute("aria-pressed", "false");
+    return;
+  }
+  button.textContent = "Pause demo";
+  button.setAttribute("aria-pressed", "true");
+  demoTimer = window.setInterval(() => {
+    const next = demoProgress >= 100 ? 0 : demoProgress + 1;
+    setDemoProgress(next);
+  }, 90);
+}
+
+function stopDemoPlayback() {
+  if (demoTimer) clearInterval(demoTimer);
+  demoTimer = null;
+  setDemoProgress(0);
+  document.querySelectorAll("[data-demo-play]").forEach((button) => {
+    button.textContent = "Play demo";
+    button.setAttribute("aria-pressed", "false");
+  });
 }
 
 document.addEventListener("DOMContentLoaded", wirePage);
